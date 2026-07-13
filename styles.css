@@ -48,6 +48,7 @@ main {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   transition: transform 180ms ease, box-shadow 180ms ease;
+  transform: translateY(-50%);
 }
 
 .waitlist-badge::before,
@@ -71,8 +72,8 @@ main {
 }
 
 .waitlist-badge:hover {
-  box-shadow: 0.19rem 0.19rem 0 #31564b;
-  transform: translate(0.06rem, calc(-50% + 0.06rem));
+  box-shadow: 0.125rem 0.125rem 0 #31564b;
+  transform: translateY(calc(-50% + 2px));
 }
 
 .waitlist-badge:focus-visible {
@@ -92,7 +93,7 @@ main {
   }
 
   .waitlist-badge:hover {
-    transform: translate(0.06rem, 0.06rem);
+    transform: translateY(2px);
   }
 }
 
