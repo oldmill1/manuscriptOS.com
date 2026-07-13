@@ -23,13 +23,18 @@ main {
   width: 100vw;
   min-height: 100vh;
   min-height: 100dvh;
-  padding: clamp(5rem, 9vw, 7rem) 1rem clamp(1.5rem, 4vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 4rem) 1rem;
+}
+
+.brand-row {
+  display: inline-block;
+  position: relative;
 }
 
 .waitlist-badge {
   position: absolute;
-  top: clamp(1rem, 2.5vw, 2rem);
-  right: clamp(1rem, 2.5vw, 2rem);
+  top: 50%;
+  left: calc(100% + clamp(1.75rem, 3vw, 3.5rem));
   padding: 0.8rem 1rem;
   border: 1px dashed #06120a;
   border-radius: 0.25rem;
@@ -42,7 +47,7 @@ main {
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .waitlist-badge::before,
@@ -66,13 +71,29 @@ main {
 }
 
 .waitlist-badge:hover {
-  box-shadow: 0.125rem 0.125rem 0 #31564b;
-  transform: translate(0.125rem, 0.125rem);
+  box-shadow: 0.19rem 0.19rem 0 #31564b;
+  transform: translate(0.06rem, calc(-50% + 0.06rem));
 }
 
 .waitlist-badge:focus-visible {
   outline: 2px solid #d6e6e0;
   outline-offset: 0.25rem;
+}
+
+@media (max-width: 40rem) {
+  .brand-row {
+    display: block;
+  }
+
+  .waitlist-badge {
+    position: static;
+    margin-top: 1rem;
+    transform: none;
+  }
+
+  .waitlist-badge:hover {
+    transform: translate(0.06rem, 0.06rem);
+  }
 }
 
 .project-header {
