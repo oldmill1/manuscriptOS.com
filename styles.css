@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #000;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(100vw, 1900px);
+  max-height: min(100vh, 1248px);
+  max-height: min(100dvh, 1248px);
+}
