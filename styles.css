@@ -212,7 +212,7 @@ body {
   align-items: center;
   width: 100%;
   max-width: 1536px;
-  margin: 0 auto;
+  margin: 0 auto clamp(72px, 8vw, 120px);
   padding: clamp(64px, 7vw, 92px) 24px 0;
   border-top: 1px solid rgba(232, 223, 207, 0.1);
   background: #050808;
@@ -278,7 +278,9 @@ body {
 
 .feature-preview {
   width: min(76vw, 1210px);
+  aspect-ratio: 2.72 / 1;
   margin-top: 42px;
+  overflow: hidden;
 }
 
 .feature-preview img {
@@ -288,6 +290,71 @@ body {
   border: 1px solid rgba(232, 223, 207, 0.22);
   border-radius: 11px 11px 0 0;
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
+}
+
+.privacy-main {
+  width: 100%;
+  padding: clamp(64px, 8vw, 112px) 24px 100px;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(84, 72, 48, 0.16), transparent 35%),
+    var(--black);
+}
+
+.privacy-policy {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  color: #b4aa99;
+  font-family: Futura, "Futura PT", "Century Gothic", sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.privacy-heading {
+  padding-bottom: 34px;
+  border-bottom: 1px solid rgba(232, 223, 207, 0.15);
+  margin-bottom: 48px;
+}
+
+.privacy-eyebrow {
+  margin: 0 0 16px;
+  color: #9b9d52;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.privacy-heading h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.effective-date {
+  margin: 18px 0 0;
+  color: #81796c;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+}
+
+.privacy-policy section + section {
+  margin-top: 42px;
+}
+
+.privacy-policy h2 {
+  margin: 0 0 12px;
+  color: #ded4c3;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.privacy-policy p {
+  margin: 0 0 18px;
 }
 
 .brand:focus-visible,
@@ -340,7 +407,7 @@ body {
   }
 
   .site-nav {
-    justify-content: space-between;
+    justify-content: center;
     gap: 0;
     width: 100%;
   }
@@ -410,5 +477,18 @@ body {
 
   .feature-preview {
     margin-top: 34px;
+  }
+
+  .privacy-main {
+    padding: 52px 18px 72px;
+  }
+
+  .privacy-policy {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .privacy-heading {
+    margin-bottom: 38px;
   }
 }
