@@ -141,3 +141,88 @@ img {
   max-height: 1248px;
   max-height: 100%;
 }
+
+.site-footer {
+  margin-top: clamp(1.5rem, 3vw, 3rem);
+  font-size: 0.8rem;
+}
+
+.site-footer a,
+.privacy-policy a {
+  color: #9eb5ae;
+  text-underline-offset: 0.2em;
+}
+
+.site-footer a:hover,
+.privacy-policy a:hover {
+  color: #d6e6e0;
+}
+
+.privacy-page {
+  align-items: stretch;
+  padding: clamp(2rem, 6vw, 5rem) 1.25rem;
+}
+
+.privacy-policy {
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  color: #afc0ba;
+  font-family: Futura, "Futura PT", "Century Gothic", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.privacy-header {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #26312e;
+  margin-bottom: 2.5rem;
+}
+
+.privacy-header h1 {
+  font-size: clamp(2.25rem, 8vw, 4.5rem);
+}
+
+.eyebrow,
+.effective-date {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: #9be27a;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.effective-date {
+  margin: 1rem 0 0;
+  color: #70847d;
+  font-size: 0.85rem;
+}
+
+.privacy-policy section {
+  margin-top: 2.5rem;
+}
+
+.privacy-policy h2 {
+  margin: 0 0 0.75rem;
+  color: #d9dfdc;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.privacy-policy p {
+  margin: 0 0 1rem;
+}
