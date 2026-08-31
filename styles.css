@@ -1,3 +1,10 @@
+:root {
+  color-scheme: dark;
+  --ink: #e8dfcf;
+  --paper: #ded5c3;
+  --black: #020303;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,220 +16,131 @@ body {
 }
 
 body {
-  background: #000;
-  color: #d6e6e0;
+  background: var(--black);
+  color: var(--ink);
   font-family: "Courier New", Courier, monospace;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
+.site-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: flex-start;
-  position: relative;
-  width: 100vw;
-  min-height: 100vh;
-  min-height: 100dvh;
-  padding: clamp(1.5rem, 4vw, 4rem) 1rem;
-}
-
-.brand-row {
-  display: inline-block;
-  position: relative;
-}
-
-.waitlist-badge {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: calc(100% + clamp(1.75rem, 3vw, 3.5rem));
-  padding: 0.8rem 1rem;
-  border: 1px dashed #06120a;
-  border-radius: 0.25rem;
-  background: #9be27a;
-  box-shadow: 0.25rem 0.25rem 0 #31564b;
-  color: #06120a;
-  cursor: pointer;
-  font-family: Futura, "Futura PT", "Century Gothic", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: transform 180ms ease, box-shadow 180ms ease;
-  transform: translateY(-50%);
-}
-
-.waitlist-badge::before,
-.waitlist-badge::after {
-  position: absolute;
-  top: 50%;
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
-  background: #000;
-  content: "";
-  transform: translateY(-50%);
-}
-
-.waitlist-badge::before {
-  left: -0.3rem;
-}
-
-.waitlist-badge::after {
-  right: -0.3rem;
-}
-
-.waitlist-badge:hover {
-  box-shadow: 0.125rem 0.125rem 0 #31564b;
-  transform: translateY(calc(-50% + 2px));
-}
-
-.waitlist-badge:focus-visible {
-  outline: 2px solid #d6e6e0;
-  outline-offset: 0.25rem;
-}
-
-@media (max-width: 40rem) {
-  .brand-row {
-    display: block;
-  }
-
-  .waitlist-badge {
-    position: static;
-    margin-top: 1rem;
-    transform: none;
-  }
-
-  .waitlist-badge:hover {
-    transform: translateY(2px);
-  }
-}
-
-.project-header {
-  flex: 0 0 auto;
-  max-width: 42rem;
-  margin-bottom: clamp(1.5rem, 3vw, 3.5rem);
-  text-align: center;
-}
-
-h1 {
-  margin: 0;
-  color: #d9dfdc;
-  font-family: Futura, "Futura PT", "Century Gothic", sans-serif;
-  font-size: clamp(2.25rem, 7vw, 5rem);
-  font-weight: 500;
-  letter-spacing: -0.07em;
-}
-
-.intro {
-  margin: 1rem 0 0;
-  color: #aebfba;
-  font-family: Futura, "Futura PT", "Century Gothic", sans-serif;
-  font-size: clamp(1rem, 2.2vw, 1.25rem);
-  font-weight: 300;
-  line-height: 1.6;
-}
-
-.project-preview {
-  display: flex;
-  flex: 1 1 auto;
-  align-items: center;
-  justify-content: center;
-  min-height: 0;
   width: 100%;
+  min-height: 92px;
+  padding: 20px 28px;
+  border-bottom: 1px solid rgba(232, 223, 207, 0.12);
+  background: #010202;
 }
 
-img {
+.brand {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand img {
   display: block;
   width: auto;
-  height: auto;
-  max-width: min(calc(100vw - 2rem), 1900px);
-  max-height: 1248px;
-  max-height: 100%;
+  height: 42px;
 }
 
-.site-footer {
-  margin-top: clamp(1.5rem, 3vw, 3rem);
-  font-size: 0.8rem;
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  justify-self: end;
+  gap: 41px;
+  margin-right: 47px;
 }
 
-.site-footer a,
-.privacy-policy a {
-  color: #9eb5ae;
-  text-underline-offset: 0.2em;
-}
-
-.site-footer a:hover,
-.privacy-policy a:hover {
-  color: #d6e6e0;
-}
-
-.privacy-page {
-  align-items: stretch;
-  padding: clamp(2rem, 6vw, 5rem) 1.25rem;
-}
-
-.privacy-policy {
-  width: 100%;
-  max-width: 46rem;
-  margin: 0 auto;
-  color: #afc0ba;
+.site-nav a {
+  color: #f0e9dc;
   font-family: Futura, "Futura PT", "Century Gothic", sans-serif;
-  font-size: 1rem;
-  line-height: 1.75;
-}
-
-.back-link {
-  display: inline-block;
-  margin-bottom: clamp(2.5rem, 6vw, 5rem);
-  font-family: "Courier New", Courier, monospace;
-  font-size: 0.9rem;
-  text-decoration: none;
-}
-
-.privacy-header {
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #26312e;
-  margin-bottom: 2.5rem;
-}
-
-.privacy-header h1 {
-  font-size: clamp(2.25rem, 8vw, 4.5rem);
-}
-
-.eyebrow,
-.effective-date {
-  font-family: "Courier New", Courier, monospace;
-}
-
-.eyebrow {
-  margin: 0 0 0.75rem;
-  color: #9be27a;
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.effective-date {
-  margin: 1rem 0 0;
-  color: #70847d;
-  font-size: 0.85rem;
-}
-
-.privacy-policy section {
-  margin-top: 2.5rem;
-}
-
-.privacy-policy h2 {
-  margin: 0 0 0.75rem;
-  color: #d9dfdc;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 1rem;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 140ms ease;
 }
 
-.privacy-policy p {
-  margin: 0 0 1rem;
+.site-nav a:hover {
+  color: #bdb3a2;
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  width: 173px;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid #c9bfad;
+  border-radius: 7px;
+  background: var(--paper);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  color: #11100e;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 140ms ease, transform 140ms ease;
+}
+
+.download-button:hover {
+  background: #eee5d5;
+  transform: translateY(-1px);
+}
+
+.brand:focus-visible,
+.site-nav a:focus-visible,
+.download-button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+@media (max-width: 800px) {
+  .site-header {
+    grid-template-columns: 1fr auto;
+    row-gap: 20px;
+    padding: 18px 20px;
+  }
+
+  .site-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    gap: clamp(22px, 7vw, 41px);
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    padding-inline: 16px;
+  }
+
+  .brand img {
+    width: min(48vw, 190px);
+    height: auto;
+  }
+
+  .download-button {
+    width: auto;
+    min-height: 38px;
+    padding-inline: 12px;
+    font-size: 11px;
+  }
+
+  .site-nav {
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+  }
+
+  .site-nav a {
+    font-size: 12px;
+  }
 }
