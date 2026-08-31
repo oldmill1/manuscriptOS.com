@@ -105,11 +105,25 @@ body {
   padding: clamp(54px, 7vw, 82px) 24px 64px;
   overflow: hidden;
   background-image:
+    linear-gradient(
+      to right,
+      transparent 0,
+      transparent 600px,
+      var(--black) 800px,
+      var(--black) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 430px,
+      var(--black) 533px,
+      var(--black) 100%
+    ),
     linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.2)),
     url("images/hero_container.jpg");
-  background-position: left top;
+  background-position: left center;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 800px 533px, 800px 533px, 800px 533px, auto;
   text-align: center;
 }
 
